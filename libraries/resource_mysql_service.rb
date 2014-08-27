@@ -21,6 +21,12 @@ class Chef
       attribute :service_name, :kind_of => String, :name_attribute => true
       attribute :template_source, :kind_of => String, :default => nil
       attribute :version, :kind_of => String, :default => nil
+      attribute :innodb_flush_method, :kind_of => String, :default => nil
+      attribute :innodb_log_files_in_group, :kind_of => String, :default => nil
+      attribute :innodb_flush_log_at_trx_commit, :kind_of => String, :default => nil
+      attribute :innodb_file_per_table, :kind_of => String, :default => nil
+      attribute :innodb_buffer_pool_size, :kind_of => String, :default => nil
+      attribute :sql_mode, :kind_of => String, :default => nil
     end
 
     include Opscode::Mysql::Helpers
@@ -88,5 +94,30 @@ class Chef
         node['platform_version']
         )
     end
+
+    def parsed_innodb_flush_method
+      return innodb_flush_method if innodb_flush_method
+    end
+
+    def parsed_innodb_log_files_in_group
+      return innodb_log_files_in_group if innodb_log_files_in_group
+    end
+
+    def parsed_innodb_flush_log_at_trx_commit
+      return innodb_flush_log_at_trx_commit if innodb_flush_log_at_trx_commit
+    end
+
+    def parsed_innodb_file_per_table
+      return innodb_file_per_table if innodb_file_per_table
+    end
+
+    def parsed_innodb_buffer_pool_size
+      return innodb_buffer_pool_size if innodb_buffer_pool_size
+    end
+
+    def parsed_sql_mode
+      return sql_mode if sql_mode
+    end
+
   end
 end
