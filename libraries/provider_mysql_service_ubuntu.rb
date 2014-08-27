@@ -159,6 +159,12 @@ class Chef
               :pid_file => pid_file,
               :socket_file => socket_file,
               :port => new_resource.parsed_port,
+              :innodb_flush_method => new_resource.parsed_innodb_flush_method,
+              :innodb_log_files_in_group => new_resource.parsed_innodb_log_files_in_group,
+              :innodb_flush_log_at_trx_commit => new_resource.parsed_innodb_flush_log_at_trx_commit,
+              :innodb_file_per_table => new_resource.parsed_innodb_file_per_table,
+              :innodb_buffer_pool_size => new_resource.parsed_innodb_buffer_pool_size,
+              :sql_mode => new_resource.parsed_sql_mode,
               :include_dir => include_dir
               )
             action :create
