@@ -29,5 +29,11 @@ mysql_service node['mysql']['service_name'] do
   remove_test_database node['mysql']['remove_test_database']
   root_network_acl node['mysql']['root_network_acl']
   version node['mysql']['version']
+  innodb_flush_method node['mysql']['innodb_flush_method']
+  innodb_log_files_in_group node['mysql']['innodb_log_files_in_group']
+  innodb_flush_log_at_trx_commit node['mysql']['innodb_flush_log_at_trx_commit']
+  innodb_file_per_table node['mysql']['innodb_file_per_table']
+  innodb_buffer_pool_size node['mysql']['innodb_buffer_pool_size']
+  sql_mode node['mysql']['sql_mode']
   action :create
 end
