@@ -31,6 +31,24 @@ tmpdir                         = /tmp
 <% if @lc_messages_dir %>
 lc-messages-dir                = <%= @lc_messages_dir %>
 <% end %>
+<% if @innodb_flush_method %>
+innodb_flush_method            = <%= @innodb_flush_method %>
+<% end %>
+<% if @innodb_log_files_in_group %>
+innodb_log_files_in_group      = <%= @innodb_log_files_in_group %>
+<% end %>
+<% if @innodb_flush_log_at_trx_commit %>
+innodb_flush_log_at_trx_commit = <%= @innodb_flush_log_at_trx_commit %>
+<% end %>
+<% if @innodb_file_per_table %>
+innodb_file_per_table          = <%= @innodb_file_per_table %>
+<% end %>
+<% if @innodb_buffer_pool_size %>
+innodb_buffer_pool_size        = <%= @innodb_buffer_pool_size %>
+<% end %>
+<% if @sql_mode %>
+sql_mode                       = <%= @sql_mode %>
+<% end %>
 sql_mode=NO_ENGINE_SUBSTITUTION,STRICT_TRANS_TABLES
 
 [mysql]
